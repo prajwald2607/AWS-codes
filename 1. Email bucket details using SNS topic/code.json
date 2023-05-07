@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Id": "snsnotification",
+    "Statement": [
+      {
+        "Sid": "",
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "s3.amazonaws.com"
+        },
+        "Action": "SNS:Publish",
+        "Resource": "<SNS-topic-ARN>",
+        "Condition": {
+          "ArnLike": {
+            "aws:SourceArn": "S3-Bucket-ARN"
+          }
+        }
+      }
+    ]
+  }
